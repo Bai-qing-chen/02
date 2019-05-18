@@ -19,8 +19,6 @@ const router = new Router({
   ]
 })
 router.beforeEach((to, from, next) => {
-  console.log(to)
-  console.log(from)
   var token = sessionStorage.getItem('token')
   if (to.path !== '/login' && !token) {
     return next('/login')
