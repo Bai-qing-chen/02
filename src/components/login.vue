@@ -1,12 +1,12 @@
 <template>
   <div id="login">
     <div class="userLogin">
-      <el-form label-position="left" :model="user">
-        <el-form-item label="账号:">
-          <el-input v-model="user.name"></el-input>
+      <el-form label-position="left" :rules="rules" :model="user">
+        <el-form-item label="账号:" prop="username">
+          <el-input v-model="user.username"></el-input>
         </el-form-item>
-        <el-form-item label="密码:">
-          <el-input v-model="user.region"></el-input>
+        <el-form-item label="密码:" prop="password">
+          <el-input v-model="user.password"></el-input>
         </el-form-item>
         <el-row :gutter="20">
           <el-col :span="5" :offset="13">
@@ -26,10 +26,10 @@ export default {
   data() {
     return {
       user: {
-        name: "",
-        region: "",
-        type: ""
-      }
+        username: "admin",
+        password: "123456"
+      },
+      rules: {}
     };
   }
 };
